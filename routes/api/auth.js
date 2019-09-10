@@ -13,7 +13,7 @@ const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 
 // @route GET api/auth
-// @desc Test route
+// @desc verify the token
 // @access Public
 router.get("/", auth, async (req, res) => {
   try {
