@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import { addLike, removeLike, deletePost } from "../../actions/post";
-import "./PostItem.css";
+// import "./PostItem.css";
 
-const PostItem = ({
+const PostView = ({
   addLike,
   removeLike,
   deletePost,
@@ -35,10 +35,8 @@ const PostItem = ({
         <img className="img_display" src={imglink} alt="" />
       </div>
       <div>
-        <Link to={`/posts/${_id}`} className="a_style">
-          <p className="title">{title}</p>
-          <p className="my-1 text_size">{text}</p>
-        </Link>
+        <p className="title">{title}</p>
+        <p className="my-1">{text}</p>
 
         <p className="post-date">
           Posted on <Moment format="YYYY/MM/DD">{date}</Moment> By{" "}
@@ -86,10 +84,10 @@ const PostItem = ({
   );
 };
 
-PostItem.defaultProps = {
+PostView.defaultProps = {
   showActions: true
 };
-PostItem.propTypes = {
+PostView.propTypes = {
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   addLike: PropTypes.func.isRequired,
@@ -103,4 +101,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { addLike, removeLike, deletePost }
-)(PostItem);
+)(PostView);

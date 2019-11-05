@@ -1,0 +1,23 @@
+.img_display {
+  width: 200px !important;
+  height: 150px;
+  border-radius: 10px;
+}
+.margin {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.title {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.8em;
+}
+.text_size {
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+}
+.a_style {
+  color: black !important;
+}

@@ -26,36 +26,55 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <Fragment>
-      <h1 className="large text-primary">Sign In</h1>
-      <p className="lead">
-        <i className="fas fa-user"></i> Sign Into Your Account
-      </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-            required
-          />
+      <div id="main">
+        <div id="flex1">
+          <div className="welcome">
+            <h1>Welcome to Epoch</h1>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={e => onChange(e)}
-            minLength="6"
-          />
+        <div id="flex2">
+          <div className="login">
+            <h2>Login</h2>
+            <br />
+            <br />
+            <form action="#" onSubmit={e => onSubmit(e)}>
+              <label>Email Address</label>
+              <div className="input-group">
+                <input
+                  type="email"
+                  placeholder="Enter Your Email"
+                  name="email"
+                  value={email}
+                  onChange={e => onChange(e)}
+                  required
+                />
+              </div>
+
+              <label>Password</label>
+              <div className="input-group">
+                <input
+                  type="Password"
+                  name="password"
+                  value={password}
+                  onChange={e => onChange(e)}
+                  placeholder="Enter Password"
+                  required
+                  minLength="6"
+                />
+              </div>
+              <button className="login-button" type="submit" value="Login">
+                Login
+              </button>
+            </form>
+            <p className="account">
+              New User?{" "}
+              <Link to="/register" style={{ color: "#0facf3" }}>
+                SignUp
+              </Link>
+            </p>
+          </div>
         </div>
-        <input type="submit" className="btn btn-primary" value="Login" />
-      </form>
-      <p className="my-1">
-        Dont't have an account? <Link to="/register">Sign Up</Link>
-      </p>
+      </div>
     </Fragment>
   );
 };

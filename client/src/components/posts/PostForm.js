@@ -2,32 +2,67 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
+import "./PostForm.css";
 
 const PostForm = ({ addPost }) => {
-  const [text, setText] = useState("");
+  // const [text, setText] = useState("");
+  const [formData, setFormData] = useState({
+    title: "",
+    text: "",
+    imglink: ""
+  });
+
+  const { title, text, imglink } = formData;
+
+  const onChange = e =>
+    //   ... is a spread operator that makes a copy of the main object
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    addPost({ title, text, imglink });
+    setFormData({ title: "", text: "", imglink: "" });
+  };
+
   return (
     <div className="post-form">
-      <div className="bg-primary p">
-        <h3>Say Something....</h3>
-      </div>
-      <form
-        className="form my-1"
-        onSubmit={e => {
-          e.preventDefault();
-          addPost({ text });
-          setText("");
-        }}
-      >
-        <textarea
-          name="text"
-          cols="30"
-          rows="5"
-          placeholder="Create a post"
-          value={text}
-          onChange={e => setText(e.target.value)}
-          required
-        ></textarea>
-        <input type="submit" className="btn btn-dark my-1" value="Submit" />
+      <form className="form" onSubmit={e => onSubmit(e)}>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Title...."
+            name="title"
+            value={title}
+            onChange={e => onChange(e)}
+            style={{ fontSize: "48px" }}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <textarea
+            id="txtArea"
+            name="text"
+            rows="15"
+            cols="70"
+            placeholder="Start typing Here............."
+            value={text}
+            onChange={e => onChange(e)}
+            style={{ resize: "none" }}
+            required
+          ></textarea>
+        </div>
+        <div className="form-group tag-button">
+          <input
+            type="text"
+            placeholder="image link...."
+            style={{ display: "inline" }}
+            name="imglink"
+            value={imglink}
+            onChange={e => onChange(e)}
+            required
+          />
+          <input type="submit" value="Publish!" />
+        </div>
       </form>
     </div>
   );

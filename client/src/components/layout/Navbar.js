@@ -3,25 +3,29 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
+import "./Navbar.css";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
-      <li>
-        <Link to="/profiles">Developers</Link>
+      <li className="navbtn">
+        <Link className="link_a " to="/profiles">
+          People
+        </Link>
       </li>
-      <li>
-        <Link to="/posts">Posts</Link>
+      <li className="navbtn">
+        <Link className="link_a " to="/posts">
+          Posts
+        </Link>
       </li>
-      <li>
-        <Link to="/dashboard">
-          <i className="fas fa-user"></i>{" "}
+      <li className="navbtn">
+        <Link className="link_a " to="/dashboard">
+          {/* <i className="fas fa-user"></i>{" "} */}
           <span className="hide-sm">Dashboard</span>
         </Link>
       </li>
-      <li>
-        <a onClick={logout} href="#!">
-          <i className="fas fa-sign-out-alt"></i>{" "}
+      <li className="navbtn">
+        <a onClick={logout} href="#!" className="link_a ">
           <span className="hide-sm">Logout</span>
         </a>
       </li>
@@ -30,23 +34,27 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <ul>
-      <li>
-        <Link to="/profiles">Developers</Link>
+      <li className="navbtn">
+        <Link className="link_a " to="/profiles">
+          People
+        </Link>
       </li>
-      <li>
-        <Link to="/register">Register</Link>
+      <li className="navbtn">
+        <Link className="link_a " to="/login">
+          Login
+        </Link>
       </li>
-      <li>
-        <Link to="/login">Login</Link>
+      <li className="navbtn">
+        <Link className="link_a " to="/register" style={{ color: "#0FACF3" }}>
+          Sign up
+        </Link>
       </li>
     </ul>
   );
   return (
-    <nav className="navbar bg-dark">
-      <h1>
-        <Link to="/">
-          <i className="fas fa-code"></i> DevConnector
-        </Link>
+    <nav className="navbar">
+      <h1 className="logo">
+        <Link to="/"> Epoch</Link>
       </h1>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>

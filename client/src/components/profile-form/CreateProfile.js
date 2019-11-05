@@ -59,7 +59,9 @@ const CreateProfile = ({ createProfile, history }) => {
             <option value="Developer">Developer</option>
             <option value="Junior Developer">Junior Developer</option>
             <option value="Senior Developer">Senior Developer</option>
+            <option value="Designer">Designer</option>
             <option value="Manager">Manager</option>
+            <option value="Photographer">Photographer</option>
             <option value="Student or Learning">Student or Learning</option>
             <option value="Instructor">Instructor or Teacher</option>
             <option value="Intern">Intern</option>

@@ -5,6 +5,7 @@ import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
+import "./Register.css";
 
 // @important points
 // insted of props.setAlert
@@ -57,60 +58,75 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead">
-        <i className="fas fa-user"></i> Create Your Account
-      </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={e => onChange(e)}
-            required
-          />
+      <div id="main">
+        <div id="flex1">
+          <div className="welcome">
+            <h1>Welcome to Epoch</h1>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-            required
-          />
-          <small className="form-text">
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email
-          </small>
+        <div id="flex2sp">
+          <div className="signup">
+            <h2>Sign Up</h2>
+            <form action="#" onSubmit={e => onSubmit(e)}>
+              <label>Name</label>
+              <div className="input-group">
+                <input
+                  type="text"
+                  placeholder="Enter Your name"
+                  name="name"
+                  value={name}
+                  onChange={e => onChange(e)}
+                  required
+                />
+              </div>
+              <label>Email Address</label>
+              <div className="input-group">
+                <input
+                  type="email"
+                  placeholder="Enter Your Email"
+                  name="email"
+                  value={email}
+                  onChange={e => onChange(e)}
+                  required
+                />
+              </div>
+              <label>Password</label>
+              <div className="input-group">
+                <input
+                  type="Password"
+                  name="password"
+                  value={password}
+                  onChange={e => onChange(e)}
+                  placeholder="Enter Password"
+                  required
+                  minLength="6"
+                />
+              </div>
+              <label>Retype Password</label>
+              <div className="input-group">
+                <input
+                  type="Password"
+                  name="passwordRecheck"
+                  value={password2}
+                  onChange={e => onChange(e)}
+                  placeholder="Enter Password"
+                  required
+                  minLength="6"
+                />
+              </div>
+              <button className="login-button" type="submit" value="Login">
+                Sign Up
+              </button>
+            </form>
+            <p className="account">
+              Have an account?{" "}
+              <Link to="/login" style={{ color: "#0facf3" }}>
+                Login
+              </Link>
+            </p>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={e => onChange(e)}
-            minLength="6"
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            name="password2"
-            value={password2}
-            onChange={e => onChange(e)}
-            minLength="6"
-          />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
-      </form>
-      <p className="my-1">
-        Already have an account? <Link to="/login">Sign In</Link>
-      </p>
+      </div>
     </Fragment>
   );
 };
