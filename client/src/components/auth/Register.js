@@ -106,7 +106,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               <div className="input-group">
                 <input
                   type="Password"
-                  name="passwordRecheck"
+                  name="password2"
                   value={password2}
                   onChange={e => onChange(e)}
                   placeholder="Enter Password"
@@ -141,7 +141,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(
-  mapStateToProps,
-  { setAlert, register }
-)(Register);
+export default connect(mapStateToProps, { setAlert, register })(Register);
