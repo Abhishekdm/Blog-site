@@ -29,12 +29,13 @@ const PostForm = ({ addPost }) => {
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input
+            className="no-border"
             type="text"
             placeholder="Title...."
             name="title"
             value={title}
             onChange={e => onChange(e)}
-            style={{ fontSize: "48px" }}
+            style={{ fontSize: "48px", border: "none !important" }}
             required
           />
         </div>
@@ -53,6 +54,7 @@ const PostForm = ({ addPost }) => {
         </div>
         <div className="form-group tag-button">
           <input
+            className="no-border"
             type="text"
             placeholder="image link...."
             style={{ display: "inline" }}
@@ -72,7 +74,4 @@ PostForm.propTypes = {
   addPost: PropTypes.func.isRequired
 };
 
-export default connect(
-  null,
-  { addPost }
-)(PostForm);
+export default connect(null, { addPost })(PostForm);
