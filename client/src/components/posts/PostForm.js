@@ -35,7 +35,7 @@ const PostForm = ({ addPost }) => {
             name="title"
             value={title}
             onChange={e => onChange(e)}
-            style={{ fontSize: "48px", border: "none !important" }}
+            style={{ fontSize: "48px" }}
             required
           />
         </div>
