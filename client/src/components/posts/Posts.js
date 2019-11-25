@@ -16,7 +16,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Fragment>
       <h1 className="large text-primary">Posts</h1>
       <p className="lead">
-        <i className="fas fa-user">Welcome to the community </i>
+        <i className="fas">Welcome to the community!</i>
       </p>
       <PostForm />
       <div className="posts">
@@ -37,7 +37,4 @@ const mapStateToProps = state => ({
   post: state.post
 });
 
-export default connect(
-  mapStateToProps,
-  { getPosts }
-)(Posts);
+export default connect(mapStateToProps, { getPosts })(Posts);
