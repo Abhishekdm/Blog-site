@@ -13,8 +13,6 @@ connectDB();
 //Init Middleware
 app.use(express.json({ extended: false }));
 
-// providing a response when a request is made on the server
-// app.get("/", (req, res) => res.send("API Running"));
 
 // Define Routes
 app.use("/api/users", require("./routes/api/users"));
@@ -29,7 +27,7 @@ if(process.env.NODE_ENV==="production"){
 
     app.get("*",(req,res)=>{
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
-    })
+    });
 }
 const PORT = process.env.PORT || 5000;
 
