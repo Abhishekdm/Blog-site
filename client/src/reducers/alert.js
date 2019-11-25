@@ -5,7 +5,7 @@ const initialState = [];
 
 // action contains type,payload(data)
 // type=what to evualuate
-export default function(state = initialState, action) {
+const alert=(state = initialState, action)=> {
   const { type, payload } = action;
   switch (type) {
     case SET_ALERT:
@@ -16,3 +16,5 @@ export default function(state = initialState, action) {
       return state;
   }
 }
+
+export default alert;
