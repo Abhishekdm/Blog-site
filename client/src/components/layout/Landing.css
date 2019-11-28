@@ -278,3 +278,8 @@
   font-size: 32px;
   font-weight: 400;
 }
+.overlay-container {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+  border-radius: 100px;
+}
