@@ -87,7 +87,7 @@ const AddExperience = ({ addExperience, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{" "}
-            Current School
+            Current company
           </p>
         </div>
         <div className="form-group">
@@ -123,7 +123,4 @@ AddExperience.propTypes = {
   addExperience: PropTypes.func.isRequired
 };
 
-export default connect(
-  null,
-  { addExperience }
-)(withRouter(AddExperience));
+export default connect(null, { addExperience })(withRouter(AddExperience));
