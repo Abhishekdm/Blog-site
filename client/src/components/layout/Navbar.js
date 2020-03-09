@@ -46,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
       <li className="navbtn">
         <Link className="link_a " to="/register" style={{ color: "#0FACF3" }}>
-          Sign up
+          Signup
         </Link>
       </li>
     </ul>

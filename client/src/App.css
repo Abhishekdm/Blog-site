@@ -494,9 +494,9 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-  .container {
+  /* .container {
     margin-top: 8rem;
-  }
+  } */
 
   .hide-sm {
     display: none;
@@ -517,21 +517,48 @@ button {
 
   /* Navbar */
   .navbar {
-    display: block;
-    text-align: center;
+    display: flex;
+    padding: 0em;
   }
 
-  .navbar ul {
-    text-align: center;
-    justify-content: center;
+  .navbar ul li {
+    margin-left: 0;
   }
 
-  .navbar h1 {
-    margin-bottom: 1rem;
+  .logo a {
+    font-size: 24px;
+    margin-left: 15px;
   }
 
-  .navbar .welcome {
+  .link_a {
+    font-size: 18px;
+  }
+
+  /* landing */
+  .landing {
+    margin-top: 50px;
+  }
+
+  .overlay-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .overlay-container h2 {
+    font-size: 34px;
+  }
+
+  /* login/signup */
+  #main {
+    width: 100%;
+  }
+  #flex1 {
     display: none;
+  }
+  #flex2,
+  #flex2sp {
+    padding: 0;
+    border-radius: 15px;
   }
 
   /* Profiles Page */
